@@ -1,0 +1,21 @@
+{
+  "batch_name": "voice_enabled",
+  "topic": "top 3 conversation starters",
+  "created_at": "2025-12-20T23:56:51.310362",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "tiktok"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "top 3 conversation starters",
+      "script": "\ud83c\udfac SCRIPT:\n\n[VISUAL: YouTuber in a lively bar or party scene]\n\n[PACE: Fast]\n\n\ud83c\udfa3 HOOK (0-5 seconds): \n\n\"Can't start a conversation at parties? [TONE: Serious] You're not alone. [TONE: Excited] But I've g...",
+      "video_path": "{'video_file': 'videos\\\\Auto-generated content_realistic_20251220_235706.mp4', 'thumbnail_file': 'videos\\\\thumbnail_realistic_20251220_235709.png', 'duration': 0.08, 'style': 'realistic', 'template': 'problem_solution', 'rare_facts_mode': False, 'created_at': '2025-12-20T23:57:09.845221', 'script_source': 'temp\\\\temp_script_20251220_235703.json'}",
+      "generated_at": "2025-12-20T23:57:09.967541",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

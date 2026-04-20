@@ -1,0 +1,23 @@
+[
+  {
+    "to": "testbuyer@example.com",
+    "subject": "Your purchase: AI Content Cash Kit",
+    "time": "2026-04-09T06:00:09.520572Z",
+    "order_id": "a62a5508-a837-4cea-b428-e4d8dc0cb1f6",
+    "status": "delivered_simulated"
+  },
+  {
+    "to": "testbuyer1@example.com",
+    "subject": "Your purchase: AI Content Cash Kit",
+    "time": "2026-04-09T06:00:09.522359Z",
+    "order_id": "8f765520-ce65-4968-a642-184a06eb6a58",
+    "status": "delivered_simulated"
+  },
+  {
+    "to": "testbuyer1@example.com",
+    "subject": "Your purchase: AI Content Cash Kit",
+    "time": "2026-04-09T06:00:32.064495+00:00",
+    "order_id": "6d06f27f-a690-44fc-9581-5db9e01c6593",
+    "status": "delivered_simulated"
+  }
+]

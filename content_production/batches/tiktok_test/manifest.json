@@ -1,0 +1,21 @@
+{
+  "batch_name": "tiktok_test",
+  "topic": "dating tips",
+  "created_at": "2025-12-20T22:09:13.060822",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "tiktok"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "dating tips",
+      "script": "dating tips",
+      "video_path": "{'video_file': 'videos\\\\Auto-generated content_realistic_20251220_220913.mp4', 'thumbnail_file': 'videos\\\\thumbnail_realistic_20251220_221324.png', 'duration': 60, 'style': 'realistic', 'template': 'problem_solution', 'rare_facts_mode': False, 'created_at': '2025-12-20T22:13:24.900037', 'script_source': 'temp\\\\temp_script_20251220_220913.json'}",
+      "generated_at": "2025-12-20T22:13:24.916830",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

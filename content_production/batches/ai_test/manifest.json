@@ -1,0 +1,21 @@
+{
+  "batch_name": "ai_test",
+  "topic": "first date conversation tips",
+  "created_at": "2025-12-20T22:40:10.771599",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "tiktok"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "first date conversation tips",
+      "script": "Have you ever wondered about first date conversation tips? Today I'm revealing the secrets that most people don't know. The biggest challenge with first date conversation tips is that most people appr...",
+      "video_path": "{'video_file': 'videos\\\\Auto-generated content_realistic_20251220_224012.mp4', 'thumbnail_file': 'videos\\\\thumbnail_realistic_20251220_224503.png', 'duration': 63.6, 'style': 'realistic', 'template': 'problem_solution', 'rare_facts_mode': False, 'created_at': '2025-12-20T22:45:04.344803', 'script_source': 'temp\\\\temp_script_20251220_224011.json'}",
+      "generated_at": "2025-12-20T22:45:04.360648",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

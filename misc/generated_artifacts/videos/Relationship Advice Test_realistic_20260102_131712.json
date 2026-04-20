@@ -1,0 +1,10 @@
+{
+  "video_file": "videos\\Relationship Advice Test_realistic_20260102_131712.mp4",
+  "thumbnail_file": "videos\\thumbnail_realistic_20260102_132034.png",
+  "duration": 38.5,
+  "style": "realistic",
+  "template": "problem_solution",
+  "rare_facts_mode": false,
+  "created_at": "2026-01-02T13:20:35.646011",
+  "script_source": "scripts\\test_script.json"
+}

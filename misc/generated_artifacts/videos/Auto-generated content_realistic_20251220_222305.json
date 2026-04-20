@@ -1,0 +1,10 @@
+{
+  "video_file": "videos\\Auto-generated content_realistic_20251220_222305.mp4",
+  "thumbnail_file": "videos\\thumbnail_realistic_20251220_222922.png",
+  "duration": 70.0,
+  "style": "realistic",
+  "template": "problem_solution",
+  "rare_facts_mode": false,
+  "created_at": "2025-12-20T22:29:22.801801",
+  "script_source": "temp\\temp_script_20251220_222305.json"
+}

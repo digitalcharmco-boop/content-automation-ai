@@ -1,0 +1,22 @@
+{
+  "youtube": {
+    "followers": 0,
+    "views": 0,
+    "engagement_rate": 0
+  },
+  "tiktok": {
+    "followers": 0,
+    "views": 0,
+    "engagement_rate": 0
+  },
+  "instagram": {
+    "followers": 0,
+    "views": 0,
+    "engagement_rate": 0
+  },
+  "twitter": {
+    "followers": 0,
+    "views": 0,
+    "engagement_rate": 0
+  }
+}

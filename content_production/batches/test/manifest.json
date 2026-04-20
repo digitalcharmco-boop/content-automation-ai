@@ -1,0 +1,24 @@
+{
+  "batch_name": "test",
+  "topic": "relationship red flags",
+  "created_at": "2025-12-10T18:00:26.443542",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "youtube",
+    "tiktok",
+    "instagram",
+    "twitter"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "relationship red flags",
+      "script": "relationship red flags",
+      "video_path": "videos\\Auto-generated Content_realistic_20251210_180027.mp4",
+      "generated_at": "2025-12-10T18:00:31.726131",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

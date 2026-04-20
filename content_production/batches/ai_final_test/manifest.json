@@ -1,0 +1,21 @@
+{
+  "batch_name": "ai_final_test",
+  "topic": "how to avoid awkward silences on dates",
+  "created_at": "2025-12-20T22:54:28.712000",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "tiktok"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "how to avoid awkward silences on dates",
+      "script": "\ud83c\udfac [VISUAL: Close-up of speaker, serious face]\n\n\ud83c\udfa3 HOOK (0-10 seconds):\n\"Ever been on a date where the conversation just dies?\" [PACE: slow, dramatic pause] \"And you're stuck in an awkward silence so th...",
+      "video_path": "{'video_file': 'videos\\\\Auto-generated content_realistic_20251220_225440.mp4', 'thumbnail_file': 'videos\\\\thumbnail_realistic_20251220_230956.png', 'duration': 90.0, 'style': 'realistic', 'template': 'problem_solution', 'rare_facts_mode': False, 'created_at': '2025-12-20T23:09:56.817640', 'script_source': 'temp\\\\temp_script_20251220_225439.json'}",
+      "generated_at": "2025-12-20T23:09:56.828772",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

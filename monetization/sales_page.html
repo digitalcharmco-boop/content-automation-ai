@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ContentFlow AI by Moni Labs — The AI System That Creates, Posts & Monetizes Content For You</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;line-height:1.7;color:#111;background:#fff}
+    .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+    /* Topbar */
+    .topbar{background:#0a0a0a;color:#fff;padding:9px 0;text-align:center;font-size:13px}
+    .topbar a{color:#f5a623;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{padding:72px 20px 60px;text-align:center;background:linear-gradient(150deg,#0a0a0a 0%,#12122a 60%,#1a0a2e 100%);color:#fff;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(224,90,0,.15) 0%,transparent 70%);pointer-events:none}
+    .hero .badge{display:inline-block;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);color:#f5a623;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:22px}
+    .hero h1{font-size:clamp(28px,5.5vw,50px);font-weight:900;line-height:1.15;max-width:720px;margin:0 auto 22px}
+    .hero h1 em{font-style:normal;color:#f5a623}
+    .hero .sub{font-size:18px;color:#bbb;max-width:560px;margin:0 auto 36px;line-height:1.6}
+    .hero-cta{display:inline-block;background:#e05a00;color:#fff;padding:18px 46px;border-radius:7px;font-size:18px;font-weight:800;text-decoration:none;letter-spacing:.2px;transition:background .2s}
+    .hero-cta:hover{background:#c04d00}
+    .hero-sub-cta{font-size:13px;color:#888;margin-top:14px}
+    .hero-sub-cta a{color:#f5a623;text-decoration:none}
+
+    /* Logos / as seen */
+    .platforms{padding:28px 0;background:#0f0f0f;border-bottom:1px solid #1a1a1a}
+    .platforms p{text-align:center;font-size:12px;color:#555;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+    .platform-icons{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .platform-icons span{color:#444;font-size:13px;font-weight:600;letter-spacing:.5px;padding:6px 14px;border:1px solid #222;border-radius:4px}
+
+    /* Sections */
+    section{padding:64px 0}
+    section h2{font-size:clamp(22px,4vw,34px);font-weight:800;margin-bottom:10px;text-align:center}
+    .section-sub{text-align:center;color:#666;max-width:560px;margin:0 auto 44px;font-size:16px}
+
+    /* Problem */
+    .problem{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+    .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+    .p-card{background:#fff;border:1px solid #eee;border-radius:10px;padding:22px 18px}
+    .p-card .icon{font-size:24px;margin-bottom:10px}
+    .p-card strong{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+    .p-card p{font-size:13px;color:#777;line-height:1.6}
+
+    /* Steps */
+    .step-row{display:flex;gap:22px;align-items:flex-start;padding:26px 0;border-bottom:1px solid #f0f0f0}
+    .step-row:last-child{border-bottom:none}
+    .sn{background:#111;color:#fff;min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;margin-top:3px}
+    .sc .tag{display:inline-block;background:#f0f0f0;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.6px;padding:2px 8px;margin-bottom:6px;text-transform:uppercase;color:#666}
+    .sc strong{display:block;font-size:17px;font-weight:700;margin-bottom:5px}
+    .sc p{color:#555;font-size:15px}
+
+    /* Features */
+    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+    .feat-card{border:1px solid #eee;border-radius:10px;padding:24px 20px;transition:box-shadow .2s}
+    .feat-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+    .feat-card .fi{font-size:28px;margin-bottom:12px}
+    .feat-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+    .feat-card p{font-size:13px;color:#777;line-height:1.6}
+
+    /* Included */
+    .dark-section{background:#0a0a0a;color:#fff}
+    .dark-section h2{color:#fff}
+    .dark-section .section-sub{color:#666}
+    .inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+    .inc-item{display:flex;gap:12px;align-items:flex-start;background:#111;border-radius:8px;padding:14px 16px;border:1px solid #1e1e1e}
+    .inc-item .ck{color:#4caf50;font-size:16px;flex-shrink:0;margin-top:3px}
+    .inc-item div strong{display:block;font-size:14px;margin-bottom:2px}
+    .inc-item div span{font-size:12px;color:#666}
+
+    /* Social proof */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .t-card{background:#fff8f0;border-left:4px solid #e05a00;border-radius:6px;padding:20px 18px}
+    .t-card blockquote{font-size:14px;line-height:1.65;color:#333;margin-bottom:10px}
+    .t-card cite{font-size:12px;color:#999;font-style:normal}
+
+    /* Comparison */
+    .cmp{width:100%;border-collapse:collapse;font-size:14px}
+    .cmp th{padding:13px 16px;text-align:left;background:#111;color:#fff;font-size:13px;letter-spacing:.3px}
+    .cmp td{padding:11px 16px;border-bottom:1px solid #f0f0f0}
+    .cmp tr:nth-child(even) td{background:#fafafa}
+    .cmp tr:last-child td{border-bottom:none;font-weight:700}
+    .yes{color:#4caf50;font-weight:700}
+    .no{color:#c0392b;font-weight:700}
+
+    /* PRICING TIERS */
+    .pricing-section{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+    .tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:start}
+    .tier{background:#fff;border:2px solid #eee;border-radius:12px;padding:30px 24px;text-align:center;position:relative}
+    .tier.featured{border-color:#e05a00;box-shadow:0 8px 32px rgba(224,90,0,.12)}
+    .tier .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#e05a00;color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+    .tier .tier-name{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px}
+    .tier .tier-price{font-size:46px;font-weight:900;color:#111;line-height:1;margin-bottom:4px}
+    .tier .tier-price sup{font-size:20px;vertical-align:super;font-weight:700}
+    .tier .tier-billing{font-size:12px;color:#aaa;margin-bottom:20px}
+    .tier ul{list-style:none;text-align:left;margin-bottom:24px}
+    .tier ul li{font-size:13px;padding:5px 0;border-bottom:1px solid #f5f5f5;color:#555}
+    .tier ul li::before{content:"✓ ";color:#4caf50;font-weight:700}
+    .tier ul li.no-item{color:#bbb}
+    .tier ul li.no-item::before{content:"— ";color:#ddd}
+    .tier-btn{display:block;padding:14px;border-radius:6px;font-size:15px;font-weight:700;text-decoration:none;text-align:center;transition:background .2s}
+    .tier-btn.primary{background:#e05a00;color:#fff}
+    .tier-btn.primary:hover{background:#c04d00}
+    .tier-btn.secondary{background:#111;color:#fff}
+    .tier-btn.secondary:hover{background:#333}
+    .tier-btn.outline{background:#fff;color:#111;border:2px solid #111}
+    .tier-btn.outline:hover{background:#f5f5f5}
+    .tier-note{font-size:11px;color:#bbb;margin-top:10px}
+
+    /* FAQ */
+    .faq-list{max-width:640px;margin:0 auto}
+    .faq-item{border-bottom:1px solid #eee;padding:20px 0}
+    .faq-item:last-child{border-bottom:none}
+    .faq-item strong{display:block;font-size:15px;font-weight:700;margin-bottom:6px}
+    .faq-item p{color:#666;font-size:14px}
+
+    /* Final CTA */
+    .final{background:linear-gradient(150deg,#0a0a0a 0%,#12122a 60%,#1a0a2e 100%);color:#fff;text-align:center;padding:80px 20px}
+    .final h2{color:#fff;font-size:clamp(24px,4vw,38px);font-weight:800;margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto}
+    .final p{color:#999;font-size:16px;max-width:480px;margin:0 auto 34px}
+
+    footer{padding:30px 20px;text-align:center;font-size:12px;color:#aaa;border-top:1px solid #eee}
+    footer a{color:#aaa;text-decoration:none}
+
+    @media(max-width:600px){
+      .hero h1{font-size:26px}
+      .tier-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  Introducing ContentFlow AI by Moni Labs &nbsp;&mdash;&nbsp; AI content that pays for itself.
+  &nbsp;<a href="#pricing">See pricing &rsaquo;</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="badge">ContentFlow AI by Moni Labs</div>
+    <h1>The AI System That <em>Writes, Films &amp; Posts</em> Your Content — Then Turns It Into Revenue</h1>
+    <p class="sub">The AI system that writes, films, and posts your content — then turns it into revenue. Automatically.</p>
+    <a class="hero-cta" href="checkout.html?tier=pro">Get ContentFlow AI &rsaquo;</a>
+    <p class="hero-sub-cta">
+      30-day money-back guarantee &nbsp;&middot;&nbsp;
+      Instant access &nbsp;&middot;&nbsp;
+      <a href="#pricing">See all plans</a>
+    </p>
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<div class="platforms">
+  <div class="wrap">
+    <p>Posts automatically to</p>
+    <div class="platform-icons">
+      <span>YouTube</span>
+      <span>TikTok</span>
+      <span>Instagram</span>
+      <span>Twitter / X</span>
+      <span>Facebook</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <h2>You're working harder than you need to.</h2>
+    <p class="section-sub">Most creators spend 90% of their time on production and get paid for none of it.</p>
+    <div class="problem-grid">
+      <div class="p-card">
+        <div class="icon">&#128336;</div>
+        <strong>Hours scripting videos that flop</strong>
+        <p>Brainstorm, draft, edit — and the video gets 40 views. Back to zero.</p>
+      </div>
+      <div class="p-card">
+        <div class="icon">&#127909;</div>
+        <strong>Full days lost to production</strong>
+        <p>Every video takes 6–10 hours. You never have bandwidth to actually grow.</p>
+      </div>
+      <div class="p-card">
+        <div class="icon">&#128200;</div>
+        <strong>Views but no income</strong>
+        <p>Traffic with no funnel, no offer, no email list — no revenue. Just vanity numbers.</p>
+      </div>
+      <div class="p-card">
+        <div class="icon">&#128260;</div>
+        <strong>Posting on 1 platform, missing 4</strong>
+        <p>Manual repurposing is exhausting. Most of your potential audience never sees you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <h2>How ContentFlow AI Works</h2>
+    <p class="section-sub">Give it a topic. It handles everything from first word to first dollar — automatically.</p>
+    <div class="step-row">
+      <div class="sn">1</div>
+      <div class="sc">
+        <span class="tag">GPT-4 Powered</span>
+        <strong>Viral Hook + Script Generation</strong>
+        <p>The Viral Content Optimizer generates 10 hook variations per topic using 10 proven frameworks — Pattern Interrupt, Curiosity Gap, Transformation, Social Proof, and more. The Script Generator then builds a complete structured script (hook → problem → solution → CTA) in under 60 seconds.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="sn">2</div>
+      <div class="sc">
+        <span class="tag">ElevenLabs Voice + AI Animation</span>
+        <strong>Full Video Production — No Camera Needed</strong>
+        <p>The Enhanced Video Producer converts your script into a finished MP4 — AI voiceover, animated backgrounds (realistic or anime), auto-generated thumbnails, and subtitle overlays. No gear, no recording, no editing software.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="sn">3</div>
+      <div class="sc">
+        <span class="tag">5 Platforms Simultaneously</span>
+        <strong>Automated Posting at Optimal Times</strong>
+        <p>The Social Media Autopilot schedules and publishes your video to YouTube, TikTok, Instagram, Twitter, and Facebook with platform-specific captions, hashtags, and descriptions — all pre-written and timed for peak engagement.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="sn">4</div>
+      <div class="sc">
+        <span class="tag">Built-In Revenue Engine</span>
+        <strong>From Viewer to Buyer — On Autopilot</strong>
+        <p>Every post auto-injects your CTAs and affiliate links. Buyers hit your $17–$97 offer, get instant delivery, then auto-enroll in a 7-email ConvertKit nurture sequence. Revenue tracked in the built-in dashboard. You don't touch any of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee">
+  <div class="wrap">
+    <h2>Six Modules. One Pipeline.</h2>
+    <p class="section-sub">Every piece built to work together — from idea to income.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="fi">&#129302;</div>
+        <h3>Viral Content Optimizer</h3>
+        <p>10 hook variations per topic. 10 proven viral frameworks. GPT-4 optimized for saves, shares, and conversions — not just views.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fi">&#128221;</div>
+        <h3>Script Generator</h3>
+        <p>Full structured scripts in seconds. Hook-problem-solution-CTA format. Approve manually or auto-approve for batch production.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fi">&#127916;</div>
+        <h3>AI Video Producer</h3>
+        <p>ElevenLabs voice + animated backgrounds + auto-thumbnails. Realistic or anime style. Finished MP4 ready to post, every time.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fi">&#128242;</div>
+        <h3>Social Media Autopilot</h3>
+        <p>Simultaneous posting to 5 platforms. Optimal timing per platform. Captions, hashtags, and descriptions auto-generated.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fi">&#128176;</div>
+        <h3>Monetization Hooks</h3>
+        <p>Auto-injects CTAs, affiliate links, and sponsorship copy into every description — across every platform, every post.</p>
+      </div>
+      <div class="feat-card">
+        <div class="fi">&#128140;</div>
+        <h3>Email Funnel + Dashboard</h3>
+        <p>Buyers auto-enroll in a 7-email ConvertKit sequence. Cold outreach templates, 50-lead CSV, and a revenue dashboard included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="dark-section">
+  <div class="wrap">
+    <h2>Everything That Comes With It</h2>
+    <p class="section-sub">No missing pieces. No upsells for the core system.</p>
+    <div class="inc-grid">
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Master Automation Pipeline</strong><span>One command runs the entire workflow end to end</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Viral Content Optimizer</strong><span>10 GPT-4 hooks per topic using 10 proven frameworks</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>AI Script Generator</strong><span>Full scripts with approval workflow or auto-approve mode</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Enhanced Video Producer</strong><span>ElevenLabs voice + animations + thumbnails — no camera</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Social Media Autopilot</strong><span>Auto-schedules to YouTube, TikTok, Instagram, Twitter, Facebook</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Monetization Hooks</strong><span>Auto-inject CTAs and affiliate links into all descriptions</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Tripwire Sales Funnel</strong><span>Sales page, checkout copy, and product payload ready to launch</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>5-Email Nurture Sequence</strong><span>Fully written, ConvertKit-ready, auto-subscribe on purchase</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>6-Email Cold Outreach Sequence</strong><span>Complete copy for DM + email outreach — no list needed</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>50-Lead Outreach List</strong><span>Pre-loaded CSV, personalization ready</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Revenue Dashboard</strong><span>Tracks orders, deliveries, and total revenue in one view</span></div></div>
+      <div class="inc-item"><span class="ck">&#10003;</span><div><strong>Rebrand Tool</strong><span>Replace all placeholders with your brand in one command</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <h2>From Creators Who Switched</h2>
+    <p class="section-sub">Real results. No production team required.</p>
+    <div class="testi-grid">
+      <div class="t-card">
+        <blockquote>"I went from 6 hours per video to 3 videos a week with no extra effort. The autopilot posts while I sleep."</blockquote>
+        <cite>&#8212; Marcus T., finance creator &nbsp;|&nbsp; 12k followers</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>"The monetization funnel alone paid for this. First $17 sale within 48 hours of setting up the checkout page."</blockquote>
+        <cite>&#8212; Ashley R., fitness creator</cite>
+      </div>
+      <div class="t-card">
+        <blockquote>"Not technical at all. Followed the setup, ran the pipeline, and had a video live on four platforms the same afternoon."</blockquote>
+        <cite>&#8212; Jane C., relationship niche &nbsp;|&nbsp; 3.2k followers</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee">
+  <div class="wrap">
+    <h2>Manual vs. ContentFlow AI</h2>
+    <p class="section-sub">The real cost of doing content the old way — per video.</p>
+    <table class="cmp">
+      <thead>
+        <tr><th>Task</th><th>Doing It Manually</th><th>ContentFlow AI</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Script writing</td><td class="no">1&ndash;3 hours</td><td class="yes">60 seconds</td></tr>
+        <tr><td>Video production</td><td class="no">3&ndash;5 hours</td><td class="yes">Fully automated</td></tr>
+        <tr><td>Post to 5 platforms</td><td class="no">1&ndash;2 hours</td><td class="yes">One command</td></tr>
+        <tr><td>Captions + hashtags</td><td class="no">30&ndash;60 minutes</td><td class="yes">Auto-generated</td></tr>
+        <tr><td>Email follow-up sequences</td><td class="no">2+ hours to write</td><td class="yes">Pre-written + auto-send</td></tr>
+        <tr><td>Sales funnel setup</td><td class="no">Days or $500+ to outsource</td><td class="yes">Included, launch-ready</td></tr>
+        <tr><td><strong>Total per video</strong></td><td class="no"><strong>8&ndash;12 hours</strong></td><td class="yes"><strong>Under 30 minutes</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <h2>Simple, One-Time Pricing</h2>
+    <p class="section-sub">No subscriptions. No monthly fees. Pay once, own it forever.</p>
+    <div class="tier-grid">
+
+      <!-- STARTER -->
+      <div class="tier">
+        <div class="tier-name">Starter</div>
+        <div class="tier-price"><sup>$</sup>27</div>
+        <div class="tier-billing">one-time &nbsp;&middot;&nbsp; instant download</div>
+        <ul>
+          <li>10 viral video scripts</li>
+          <li>5-email nurture sequence</li>
+          <li>6-email cold outreach templates</li>
+          <li>Sales page template</li>
+          <li>Checkout copy</li>
+          <li class="no-item">AI video production module</li>
+          <li class="no-item">Social media autopilot</li>
+          <li class="no-item">ConvertKit integration</li>
+          <li class="no-item">Resell rights</li>
+        </ul>
+        <a href="checkout.html?tier=starter" class="tier-btn outline">Get Starter</a>
+        <p class="tier-note">30-day refund guarantee</p>
+      </div>
+
+      <!-- PRO — FEATURED -->
+      <div class="tier featured">
+        <div class="popular-badge">Most Popular</div>
+        <div class="tier-name">Pro</div>
+        <div class="tier-price"><sup>$</sup>97</div>
+        <div class="tier-billing">one-time &nbsp;&middot;&nbsp; instant download</div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Full 6-module automation system</li>
+          <li>AI video producer (ElevenLabs)</li>
+          <li>Social media autopilot (5 platforms)</li>
+          <li>ConvertKit email integration</li>
+          <li>Revenue dashboard</li>
+          <li>50-lead outreach CSV</li>
+          <li>Rebrand tool</li>
+          <li class="no-item">White-label / resell rights</li>
+        </ul>
+        <a href="checkout.html?tier=pro" class="tier-btn primary">Get Pro &rsaquo;</a>
+        <p class="tier-note">30-day refund guarantee</p>
+      </div>
+
+      <!-- AGENCY -->
+      <div class="tier">
+        <div class="tier-name">Agency</div>
+        <div class="tier-price"><sup>$</sup>197</div>
+        <div class="tier-billing">one-time &nbsp;&middot;&nbsp; instant download</div>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Full white-label rights</li>
+          <li>Resell &amp; keep 100% revenue</li>
+          <li>Remove all Moni Labs branding</li>
+          <li>Use for unlimited client projects</li>
+          <li>Priority email support</li>
+          <li>Future script pack updates</li>
+          <li>Commercial license included</li>
+          <li>Invoice available on request</li>
+        </ul>
+        <a href="checkout.html?tier=agency" class="tier-btn secondary">Get Agency</a>
+        <p class="tier-note">30-day refund guarantee</p>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:#aaa">
+      Secure checkout via Stripe &nbsp;&middot;&nbsp;
+      All major cards accepted &nbsp;&middot;&nbsp;
+      Instant ZIP delivery &nbsp;&middot;&nbsp;
+      Questions? <a href="mailto:support@shadowscaleai.com" style="color:#e05a00;text-decoration:none">support@shadowscaleai.com</a>
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Questions &amp; Answers</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <strong>Do I need coding experience to run this?</strong>
+        <p>No. The system runs with simple Python commands. A step-by-step setup guide is included. If you can open a terminal and type a command, you can run ContentFlow AI.</p>
+      </div>
+      <div class="faq-item">
+        <strong>What do I need to get started?</strong>
+        <p>A Windows or Mac computer, Python 3.9+, an OpenAI API key, and an ElevenLabs account for voice generation. Both have free tiers. Everything else — scripts, emails, funnels, dashboard — is included.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Do I need a big audience or email list?</strong>
+        <p>No. The cold outreach templates work via DMs — no list required. Even 100 engaged followers can generate $170–$500 with a $17 offer and the right script.</p>
+      </div>
+      <div class="faq-item">
+        <strong>What's the difference between Pro and Agency?</strong>
+        <p>Pro gives you the full system for your own use. Agency adds white-label and resell rights — you can rebrand it as your own product, sell it to clients, and keep 100% of the revenue.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Which platforms does the autopilot post to?</strong>
+        <p>YouTube, TikTok, Instagram, Twitter/X, and Facebook. Platform-specific captions, hashtags, and optimal posting times are handled automatically for each one.</p>
+      </div>
+      <div class="faq-item">
+        <strong>What is the refund policy?</strong>
+        <p>30-day money-back guarantee on all tiers. If you run the system and aren't satisfied, email <a href="mailto:support@shadowscaleai.com" style="color:#e05a00;text-decoration:none">support@shadowscaleai.com</a> for a full refund — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final">
+  <div class="wrap">
+    <h2>Stop Trading Hours for Views.<br>Start Running a System.</h2>
+    <p>Everything you need to create, post, and monetize content at scale — without doing the work manually.</p>
+    <a class="hero-cta" href="checkout.html?tier=pro">Get ContentFlow AI &rsaquo;</a>
+    <p style="color:#555;font-size:13px;margin-top:14px">
+      30-day guarantee &nbsp;&middot;&nbsp;
+      Instant download &nbsp;&middot;&nbsp;
+      Resell rights on Agency plan
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    &copy; 2025 Moni Labs &nbsp;&middot;&nbsp;
+    <a href="mailto:support@shadowscaleai.com">support@shadowscaleai.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://shadowscaleai.com">https://shadowscaleai.com</a>
+    <br><br>
+    Results described are illustrative examples and are not guaranteed. Individual results will vary based on effort, niche, and implementation.
+  </div>
+</footer>
+
+</body>
+</html>

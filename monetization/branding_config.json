@@ -1,0 +1,14 @@
+{
+  "company_name": "Moni Labs",
+  "product_name": "ContentFlow AI",
+  "product_price": "97",
+  "product_description": "The AI system that writes, films, and posts your content \u2014 then turns it into revenue. Automatically.",
+  "checkout_url": "https://buy.stripe.com/YOUR_PRO_LINK",
+  "checkout_url_starter": "https://buy.stripe.com/YOUR_STARTER_LINK",
+  "checkout_url_pro": "https://buy.stripe.com/YOUR_PRO_LINK",
+  "checkout_url_agency": "https://buy.stripe.com/YOUR_AGENCY_LINK",
+  "sender_email": "moni@shadowscaleai.com",
+  "sender_name": "Moni Gochar",
+  "support_email": "support@shadowscaleai.com",
+  "website_url": "https://shadowscaleai.com"
+}

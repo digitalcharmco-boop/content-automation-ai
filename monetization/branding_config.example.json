@@ -1,0 +1,11 @@
+{
+  "company_name": "Your Company Name",
+  "product_name": "AI Automation Toolkit",
+  "product_price": "17",
+  "product_description": "Unlock 10x faster content production with AI-powered video, social media, and email automation.",
+  "checkout_url": "https://gumroad.com/l/your-product-slug",
+  "sender_email": "launches@yourcompany.com",
+  "sender_name": "Your Company Team",
+  "support_email": "support@yourcompany.com",
+  "website_url": "https://yourcompany.com"
+}

@@ -1,0 +1,21 @@
+{
+  "batch_name": "ai_powered",
+  "topic": "how to keep a conversation flowing on a first date",
+  "created_at": "2025-12-20T22:47:59.061367",
+  "animation_style": "realistic",
+  "story_template": "problem_solution",
+  "platforms": [
+    "tiktok"
+  ],
+  "videos": [
+    {
+      "video_num": 1,
+      "hook": "how to keep a conversation flowing on a first date",
+      "script": "Have you ever wondered about how to keep a conversation flowing on a first date? Today I'm revealing the secrets that most people don't know. The biggest challenge with how to keep a conversation flow...",
+      "video_path": "{'video_file': 'videos\\\\Auto-generated content_realistic_20251220_224800.mp4', 'thumbnail_file': 'videos\\\\thumbnail_realistic_20251220_225357.png', 'duration': 80.4, 'style': 'realistic', 'template': 'problem_solution', 'rare_facts_mode': False, 'created_at': '2025-12-20T22:53:57.570307', 'script_source': 'temp\\\\temp_script_20251220_224759.json'}",
+      "generated_at": "2025-12-20T22:53:57.589726",
+      "status": "ready",
+      "published": false
+    }
+  ]
+}

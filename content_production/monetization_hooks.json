@@ -1,0 +1,28 @@
+{
+  "loveguard_cta": {
+    "enabled": true,
+    "text": "Join 10k+ on LoveGuard for relationship insights: [LOVEGUARD_LINK]",
+    "placement": "middle"
+  },
+  "affiliate_links": {
+    "dating_apps": {
+      "enabled": true,
+      "links": {
+        "bumble": "https://bumble.com?ref=yourname",
+        "match": "https://match.com?ref=yourname",
+        "hinge": "https://hinge.com?ref=yourname"
+      }
+    }
+  },
+  "sponsorships": {
+    "enabled": false,
+    "text": "[SPONSOR MESSAGE]",
+    "placement": "top"
+  },
+  "cta_templates": {
+    "youtube": "Subscribe for weekly relationship & dating tips! \ud83d\udc95",
+    "tiktok": "Follow for daily dating and relationship advice! \ud83d\udc95",
+    "instagram": "DM us your dating questions! \ud83d\udc95",
+    "twitter": "Like & Retweet if this helped! \ud83d\udc95"
+  }
+}
