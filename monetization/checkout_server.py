@@ -30,6 +30,9 @@ TIERS = {
 
 app = Flask(__name__, static_folder=str(Path(__file__).parent))
 
+from monetization.stripe_extensions import bp as stripe_ext_bp
+app.register_blueprint(stripe_ext_bp)
+
 
 # ── PAGES ───────────────────────────────────────────────────────────────────
 
